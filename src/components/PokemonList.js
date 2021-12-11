@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
 import Pokemon from "./Pokemon";
 
-const PokemonList = () => {
-    const data = useSelector(state => state.pokemon)
-
+const PokemonList = ({ data }) => {
     return (
         <ul>
-            {data.map((pokemon) => (
+            {data.results.map((pokemon) => (
                 <Pokemon key={pokemon.name} pokemon={pokemon} />
             ))}
         </ul>

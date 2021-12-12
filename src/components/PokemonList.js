@@ -1,12 +1,12 @@
 import Pokemon from "./Pokemon";
 
-const PokemonList = ({ data }) => {
+const PokemonList = ({ pokemonData }) => {
     return (
-        <ul>
-            {data.results.map((pokemon) => (
+        <div>
+            {pokemonData.map((pokemon) => (
                 <Pokemon key={pokemon.name} pokemon={pokemon} />
             ))}
-        </ul>
+        </div>
     );
 }
 

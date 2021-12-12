@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 
 const Pokemon = ({ pokemon }) => {
     return (
-        <li>
+        <div style={{ border: '1px solid black' }}>
+            <span>{pokemon.id}</span>
             <Link to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link>
-        </li>
+            <img src={pokemon.sprite} alt={pokemon.name} />
+        </div>
     );
 }
 

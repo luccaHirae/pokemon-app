@@ -3,8 +3,7 @@ import { useGetPokemonByLimitQuery } from "../redux/services/pokemon";
 import PokemonList from '../components/PokemonList'
 
 const Home = () => {
-    const [offset, setOffset] = useState(0)
-    const { data, error, isLoading, isSuccess } = useGetPokemonByLimitQuery(offset)
+    const { data, error, isLoading, isSuccess } = useGetPokemonByLimitQuery()
     const [pokemonData, setPokemonData] = useState([])
 
     useEffect(() => {
@@ -28,9 +27,10 @@ const Home = () => {
     return (
         <div>
             <h1>Pokemons</h1>
-            <input type="number" value={offset} onChange={(e) => setOffset(e.target.value)} />
-            {isSuccess && <PokemonList pokemonData={pokemonData} />}
-            {isLoading && <h3>Loading...</h3>}
+            <div>
+                {isSuccess && <PokemonList pokemonData={pokemonData} />}
+                {isLoading && <h3>Loading...</h3>}
+            </div>
         </div>
     );
 }

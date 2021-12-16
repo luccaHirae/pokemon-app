@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useGetPokemonByLimitQuery } from "../redux/services/pokemon";
 import PokemonList from '../components/PokemonList'
+import { Container } from "../GlobalStyles";
 
 const Home = () => {
     const { data, error, isLoading, isSuccess } = useGetPokemonByLimitQuery()
@@ -25,13 +26,12 @@ const Home = () => {
     if (error) return <h3>Oops! There was an error.</h3>
 
     return (
-        <div>
+        <Container>
             <h1>Pokemons</h1>
-            <div>
-                {isSuccess && <PokemonList pokemonData={pokemonData} />}
-                {isLoading && <h3>Loading...</h3>}
-            </div>
-        </div>
+
+            {isSuccess && <PokemonList pokemonData={pokemonData} />}
+            {isLoading && <h3>Loading...</h3>}
+        </Container>
     );
 }
 

@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+import { firstCharToUpperCase, insertDot } from "../functions";
 import { useGetPokemonByNameQuery } from "../redux/services/pokemon";
 
 const PokemonDetails = () => {
@@ -9,17 +10,6 @@ const PokemonDetails = () => {
     if (error) return <h3>Oops! There was an error.</h3>
 
     if (isLoading) return <h3>Loading...</h3>
-
-    const firstCharToUpperCase = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1)
-    }
-
-    const insertComma = (num) => {
-        const string = num.toString()
-        let firstPart = string.slice(0, string.length - 1)
-        if (firstPart === '') firstPart = 0
-        return firstPart + ',' + string.slice(string.length - 1)
-    }
 
     return (
         <div>
@@ -50,8 +40,8 @@ const PokemonDetails = () => {
             </div>
 
             <div>
-                <p>height: {insertComma(pokemon.height)} m</p>
-                <p>weight: {insertComma(pokemon.weight)} kg</p>
+                <p>height: {insertDot(pokemon.height)} m</p>
+                <p>weight: {insertDot(pokemon.weight)} kg</p>
             </div>
         </div>
     );

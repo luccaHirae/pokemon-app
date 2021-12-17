@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Button } from "../../GlobalStyles";
 import Pokemon from "../Pokemon";
-import { Form, Grid, Input, NoResults, ResetButton } from "./styles";
+import { Form, Grid, Input, NoResults } from "./styles";
 
 const PokemonList = ({ pokemonData }) => {
     const [filter, setFilter] = useState('')
@@ -19,7 +20,7 @@ const PokemonList = ({ pokemonData }) => {
                     onChange={e => setFilter(e.target.value)}
                     placeholder="Filter by name..."
                 />
-                <ResetButton onClick={() => setFilter('')} type="reset">reset</ResetButton>
+                <Button onClick={() => setFilter('')} type="reset">reset</Button>
             </Form>
 
             <Grid>
@@ -28,7 +29,7 @@ const PokemonList = ({ pokemonData }) => {
                 ))}
             </Grid>
 
-            {pokemons.length === 0 && <NoResults>No pokemon found called "{filter}"</NoResults>}
+            {pokemons?.length === 0 && <NoResults>No pokemon found called "{filter}"</NoResults>}
         </>
     );
 }

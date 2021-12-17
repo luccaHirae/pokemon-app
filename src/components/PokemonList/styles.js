@@ -23,24 +23,6 @@ export const Input = styled.input`
     }
 `
 
-export const ResetButton = styled.button`
-    background-color: ${({ theme }) => theme.colors.onyx};
-    color: #fff;
-    font-size: 1.15em;
-    font-weight: bold;
-    border: none;
-    border-radius: 16px;
-    padding: 0.7rem;
-    transition: all 0.3s ease;
-
-    &:hover {
-        cursor: pointer;
-        background-color: #fff;
-        color: ${({ theme }) => theme.colors.onyx};
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-    }
-`
-
 export const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
         <Container>
-            <h1>Pokemons</h1>
+            <h1>Pokemon Finder</h1>
 
             {isSuccess && <PokemonList pokemonData={pokemonData} />}
             {isLoading && <h3>Loading...</h3>}

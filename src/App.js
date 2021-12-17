@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './GlobalStyles';
 import Home from "./pages/Home";
+import NotFound from './pages/NotFound';
 import PokemonDetails from './pages/PokemonDetails';
 
 const theme = {
@@ -22,7 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemon/:name" element={<PokemonDetails />} />
-          <Route path="/*" element={<h1>Page not found</h1>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeProvider>
     </Router>

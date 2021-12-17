@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useGetPokemonByLimitQuery } from "../redux/services/pokemon";
-import PokemonList from '../components/PokemonList'
 import { Container } from "../GlobalStyles";
+import PokemonList from '../components/PokemonList'
+import Loading from "../components/Loading";
+import HomeError from "../components/HomeError";
 
 const Home = () => {
-    const { data, error, isLoading, isSuccess } = useGetPokemonByLimitQuery()
+    const { data, error, isLoading, isSuccess, refetch } = useGetPokemonByLimitQuery()
     const [pokemonData, setPokemonData] = useState([])
 
     useEffect(() => {
@@ -23,14 +25,14 @@ const Home = () => {
         loadSprites()
     }, [data?.results])
 
-    if (error) return <h3>Oops! There was an error.</h3>
+    if (error) return <HomeError refetch={refetch} />
 
     return (
         <Container>
             <h1>Pokemon Finder</h1>
 
             {isSuccess && <PokemonList pokemonData={pokemonData} />}
-            {isLoading && <h3>Loading...</h3>}
+            {isLoading && <Loading />}
         </Container>
     );
 }

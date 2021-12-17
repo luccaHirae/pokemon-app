@@ -13,6 +13,8 @@ import {
     Legend,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
+import Loading from "../../components/Loading";
+import DetailsError from "../../components/DetailsError";
 
 ChartJS.register(
     RadialLinearScale,
@@ -28,9 +30,9 @@ const PokemonDetails = () => {
     const navigate = useNavigate()
     const { data: pokemon, error, isLoading } = useGetPokemonByNameQuery(params.name)
 
-    if (error) return <h3>Oops! There was an error.</h3>
+    if (error) return <DetailsError />
 
-    if (isLoading) return <h3>Loading...</h3>
+    if (isLoading) return <Loading />
 
     const baseStats = pokemon.stats.map(s => s.base_stat)
     const statNames = pokemon.stats.map(s => s.stat.name)

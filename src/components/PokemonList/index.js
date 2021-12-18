@@ -29,7 +29,7 @@ const PokemonList = ({ pokemonData }) => {
                 ))}
             </Grid>
 
-            {pokemons?.length === 0 && <NoResults>No pokemon found called "{filter}"</NoResults>}
+            {pokemons?.length === 0 && <NoResults>No pokémon found called "{filter}"</NoResults>}
         </>
     );
 }

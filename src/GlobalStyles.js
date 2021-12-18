@@ -24,8 +24,9 @@ const GlobalStyles = createGlobalStyle`
 `
 
 export const Container = styled.div`
+    min-height: 100vh;
     max-width: 75%;
-    margin: auto;
+    margin: 0 auto;
     padding: 4rem;
 `
 

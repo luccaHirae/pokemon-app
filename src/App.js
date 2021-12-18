@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import Footer from './components/Footer';
 import GlobalStyles from './GlobalStyles';
 import Home from "./pages/Home";
 import NotFound from './pages/NotFound';
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/pokemon/:name" element={<PokemonDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </ThemeProvider>
     </Router>
   );

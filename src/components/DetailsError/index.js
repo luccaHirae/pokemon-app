@@ -8,8 +8,10 @@ const DetailsError = () => {
     return (
         <Container>
             <DetailsErrorWrapper>
-                <h1>Pokemon Not Found</h1>
-                <DetailsErrorMessage>Sorry, there was an error fetching the pokemon data.</DetailsErrorMessage>
+                <h1>Pokémon Not Found</h1>
+                <DetailsErrorMessage>
+                    Sorry, there was an error while fetching the pokémon data.
+                </DetailsErrorMessage>
                 <Button onClick={() => navigate('/')}>Homepage</Button>
             </DetailsErrorWrapper>
         </Container>

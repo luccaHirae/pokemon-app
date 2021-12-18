@@ -1,12 +1,15 @@
+import { Container } from "../../GlobalStyles";
 import { LoaderWrapper, LoadingBall } from "./styles";
 
 const Loading = () => {
     return (
-        <LoaderWrapper>
-            <LoadingBall></LoadingBall>
-            <LoadingBall></LoadingBall>
-            <LoadingBall></LoadingBall>
-        </LoaderWrapper>
+        <Container>
+            <LoaderWrapper>
+                <LoadingBall></LoadingBall>
+                <LoadingBall></LoadingBall>
+                <LoadingBall></LoadingBall>
+            </LoaderWrapper>
+        </Container>
     );
 }
 

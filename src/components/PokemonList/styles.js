@@ -5,21 +5,34 @@ export const Form = styled.form`
     justify-content: center;
     align-items: center;
     margin: 4rem;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const Input = styled.input`
-    height: 2.5rem;
+    min-height: 2rem;
     font-size: 1em;
     width: 100%;
-    padding: 1rem;
-    border-radius: 16px;
-    border: 2px solid ${({ theme }) => theme.colors.onyx};
-    transition: all 0.3s ease-out;
+    min-width: 12rem;
+    padding: 1rem 1.5rem;
     margin-right: 1rem;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 
     &:focus {
-        background-color: ${({ theme }) => theme.colors.onyx};
         color: #fff;
+        background-color: ${({ theme }) => theme.colors.onyx};
+        outline: none;
+        box-shadow: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 2rem;
+        margin-right: 0;
     }
 `
 
@@ -27,6 +40,14 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 708px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const NoResults = styled.p`

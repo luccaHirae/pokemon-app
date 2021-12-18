@@ -15,10 +15,11 @@ const PokemonList = ({ pokemonData }) => {
         <>
             <Form>
                 <Input
+                    id="filter"
                     type="text"
+                    placeholder="Filter by name"
                     value={filter}
                     onChange={e => setFilter(e.target.value)}
-                    placeholder="Filter by name..."
                 />
                 <Button onClick={() => setFilter('')} type="reset">reset</Button>
             </Form>

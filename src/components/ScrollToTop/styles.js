@@ -22,9 +22,18 @@ export const ScrollButton = styled.button`
         transform: scale(1.05);
         filter: brightness(75%);
     }
+
+    @media screen and (max-width: 425px) {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    }
 `;
 
 export const ArrowIcon = styled(FaArrowUp)`
     height: 2rem;
     width: 2rem;
+
+    @media screen and (max-width: 425px) {
+        height: 1rem;
+        width: 1rem;
+    }
 `

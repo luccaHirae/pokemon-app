@@ -1,15 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { routes } from './routes';
 import { ThemeProvider } from 'styled-components';
 import Footer from './components/Footer';
 import GlobalStyles from './GlobalStyles';
-import Home from "./pages/Home";
-import NotFound from './pages/NotFound';
-import PokemonDetails from './pages/PokemonDetails';
 
 const theme = {
   colors: {
-    primary: '#3F88C5',
-    secondary: '#44BBA4',
     onyx: '#393E41',
     cinnabar: '#E94F37',
     ivory: '#F6F7EB'
@@ -22,9 +18,9 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pokemon/:name" element={<PokemonDetails />} />
-          <Route path="*" element={<NotFound />} />
+          {routes.map(route => (
+            <Route key={route.name} path={route.path} element={route.element} />
+          ))}
         </Routes>
         <Footer />
       </ThemeProvider>

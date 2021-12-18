@@ -2,7 +2,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import { firstCharToUpperCase } from "../../functions";
 import { useGetPokemonByNameQuery } from "../../redux/services/pokemon";
 import { Button, Container } from '../../GlobalStyles';
-import { ChartTitle, ChartWrapper, ContentWrapper, HeaderContainer, HeaderName, Type, Wrapper } from "./styles";
+import {
+    ChartTitle,
+    ChartWrapper,
+    ContentWrapper,
+    HeaderContainer,
+    HeaderName,
+    Image,
+    Type,
+    Wrapper
+} from "./styles";
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -15,6 +24,7 @@ import {
 import { Radar } from 'react-chartjs-2';
 import Loading from "../../components/Loading";
 import DetailsError from "../../components/DetailsError";
+import { Helmet } from "react-helmet";
 
 ChartJS.register(
     RadialLinearScale,
@@ -54,6 +64,10 @@ const PokemonDetails = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Poké Data - {firstCharToUpperCase(pokemon.name)}</title>
+            </Helmet>
+
             <HeaderContainer>
                 <HeaderName>{firstCharToUpperCase(pokemon.name)}</HeaderName>
                 <Button onClick={() => navigate(-1)}>&#8592; Go Back</Button>
@@ -76,7 +90,7 @@ const PokemonDetails = () => {
                     </div>
                 </div>
 
-                <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
+                <Image src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
             </ContentWrapper>
 
             <ChartWrapper>

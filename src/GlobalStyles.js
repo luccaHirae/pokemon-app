@@ -20,6 +20,10 @@ const GlobalStyles = createGlobalStyle`
     h1 {
         color: ${({ theme }) => theme.colors.onyx};
         text-align: center;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+        }
     }
 `
 
@@ -28,6 +32,13 @@ export const Container = styled.div`
     max-width: 75%;
     margin: 0 auto;
     padding: 4rem;
+
+    @media screen and (max-width: 425px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 export const Button = styled.button`
@@ -36,8 +47,8 @@ export const Button = styled.button`
     font-size: 1.15em;
     font-weight: bold;
     border: none;
-    border-radius: 16px;
-    padding: 0.7rem;
+    border-radius: 25px;
+    padding: 1rem;
     transition: all 0.3s ease;
 
     &:hover {

@@ -4,6 +4,11 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
 `
 
 export const HeaderName = styled.h2`
@@ -15,6 +20,10 @@ export const ContentWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
 `
 
 export const Wrapper = styled.div`
@@ -69,9 +78,23 @@ export const Type = styled.p`
     border-radius: 4px;
 `
 
+export const Image = styled.img`
+    @media screen and (max-width: 425px) {
+        display: none;
+    }
+`
+
 export const ChartWrapper = styled.div`
     max-width: 75%;
     margin: auto;
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: 425px) {
+        display: none;
+    }
 `
 
 export const ChartTitle = styled.h2`

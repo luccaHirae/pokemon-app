@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { firstCharToUpperCase } from "../../functions";
 import { useGetPokemonByNameQuery } from "../../redux/services/pokemon";
-import { Button, Container } from '../../GlobalStyles';
+import { AddButton, AddIcon, Button, Container } from '../../GlobalStyles';
 import {
     ChartTitle,
     ChartWrapper,
@@ -25,6 +25,8 @@ import { Radar } from 'react-chartjs-2';
 import Loading from "../../components/Loading";
 import DetailsError from "../../components/DetailsError";
 import { Helmet } from "react-helmet";
+import { useDispatch } from "react-redux";
+import { add } from "../../redux/reducers/pokemonReducer";
 
 ChartJS.register(
     RadialLinearScale,
@@ -38,6 +40,7 @@ ChartJS.register(
 const PokemonDetails = () => {
     const params = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const { data: pokemon, error, isLoading } = useGetPokemonByNameQuery(params.name)
 
     if (error) return <DetailsError />
@@ -62,6 +65,10 @@ const PokemonDetails = () => {
         }]
     }
 
+    const handleClick = () => {
+        dispatch(add(pokemon))
+    }
+
     return (
         <Container>
             <Helmet>
@@ -70,6 +77,9 @@ const PokemonDetails = () => {
 
             <HeaderContainer>
                 <HeaderName>{firstCharToUpperCase(pokemon.name)}</HeaderName>
+                <AddButton onClick={handleClick} title="add pókemon to team">
+                    <AddIcon />
+                </AddButton>
                 <Button onClick={() => navigate(-1)}>&#8592; Go Back</Button>
             </HeaderContainer>
 

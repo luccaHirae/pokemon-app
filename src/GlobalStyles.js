@@ -1,3 +1,4 @@
+import { AiOutlinePlus } from 'react-icons/ai';
 import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
@@ -58,5 +59,27 @@ export const Button = styled.button`
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     }
 `
+
+export const AddButton = styled.button`
+    display: flex;
+    background-color: ${({ theme }) => theme.colors.cinnabar};
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        color: ${({ theme }) => theme.colors.cinnabar};
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+`;
+
+export const AddIcon = styled(AiOutlinePlus)`
+    width: 1.5rem;
+    height: 1.5rem;
+`;
 
 export default GlobalStyles

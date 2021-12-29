@@ -1,43 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { v4 as uuidv4 } from 'uuid'
 
-const initialState = [
-    {
-        id: 1,
-        name: 'bulbasaur',
-        types: ['grass', 'poison']
-    },
-    {
-        id: 2,
-        name: 'charmander',
-        types: ['fire']
-    },
-    {
-        id: 3,
-        name: 'squirtle',
-        types: ['water']
-    },
-]
+const initialState = []
 
 export const pokemonSlice = createSlice({
     name: 'pokemon',
     initialState,
     reducers: {
         add: (state, action) => {
-            const newPokemon = { ...action.payload, id: state.length }
-            return [...state, newPokemon]
+            if (state.length < 6) {
+                const newPokemon = {
+                    uuid: uuidv4(),
+                    id: action.payload.id,
+                    name: action.payload.name,
+                    sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${action.payload.id}.png`
+                }
+                return [...state, newPokemon]
+            }
+            return state
         },
         remove: (state, action) => {
-            return state.filter(pokemon => pokemon.id !== action.payload)
+            return state.filter(pokemon => pokemon.uuid !== action.payload)
         },
-        update: (state, action) => {
-            const id = action.payload.id
-            const pokemonToUpdate = state.find(p => p.id === id)
-            const updatedPokemon = { ...pokemonToUpdate, name: action.payload.name }
-            return state.map(pokemon => pokemon.id !== id ? pokemon : updatedPokemon)
-        }
     }
 })
 
-export const { add, remove, update } = pokemonSlice.actions
+export const { add, remove } = pokemonSlice.actions
 
 export default pokemonSlice.reducer

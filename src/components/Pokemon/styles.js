@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Card = styled.div`
     background-color: #fff;
     border-radius: 16px;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     padding-left: 1rem;
     padding-right: 1rem ;
     padding-bottom: 1rem;
@@ -39,7 +39,7 @@ export const Sprite = styled.img`
 `
 
 export const MoreDetails = styled(Link)`
-    background-color: ${({ theme }) => theme.colors.cinnabar};
+    background-color: ${({ theme }) => theme.colors.onyx};
     color: #fff;
     text-align: center;
     border-radius: 16px;
@@ -58,3 +58,4 @@ export const CardContent = styled.div`
     display: flex;
     flex-direction: column;
 `
+

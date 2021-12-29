@@ -20,7 +20,7 @@ export const Input = styled.input`
     margin-right: 1rem;
     border-radius: 25px;
     border: none;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
 
     &:focus {

@@ -22,9 +22,12 @@ export const pokemonSlice = createSlice({
         remove: (state, action) => {
             return state.filter(pokemon => pokemon.uuid !== action.payload)
         },
+        empty: () => {
+            return initialState
+        }
     }
 })
 
-export const { add, remove } = pokemonSlice.actions
+export const { add, remove, empty } = pokemonSlice.actions
 
 export default pokemonSlice.reducer

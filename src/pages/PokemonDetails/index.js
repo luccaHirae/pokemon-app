@@ -77,9 +77,11 @@ const PokemonDetails = () => {
 
             <HeaderContainer>
                 <HeaderName>{firstCharToUpperCase(pokemon.name)}</HeaderName>
+
                 <AddButton onClick={handleClick} title="add pókemon to team">
                     <AddIcon />
                 </AddButton>
+
                 <Button onClick={() => navigate(-1)}>&#8592; Go Back</Button>
             </HeaderContainer>
 
@@ -92,12 +94,10 @@ const PokemonDetails = () => {
                         ))}
                     </Wrapper>
 
-                    <div>
-                        <h3>Abilities</h3>
-                        {pokemon.abilities.map(a => (
-                            <p key={a.ability.name}>{a.ability.name}</p>
-                        ))}
-                    </div>
+                    <h3>Abilities</h3>
+                    {pokemon.abilities.map(a => (
+                        <p key={a.ability.name}>{a.ability.name}</p>
+                    ))}
                 </div>
 
                 <Image src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />

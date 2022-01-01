@@ -15,7 +15,7 @@ import {
 const Sidebar = () => {
     const pokemonTeam = useSelector(state => state.pokemon)
     const dispatch = useDispatch()
-    const { value, handleToggle } = useToggle(false)
+    const { value, handleToggle } = useToggle(true)
 
     const handleClick = (uuid) => {
         dispatch(remove(uuid))
@@ -29,7 +29,7 @@ const Sidebar = () => {
                         <SidebarCloseIcon />
                     </SidebarButton>
 
-                    <TeamLink to="/">Team</TeamLink>
+                    <TeamLink to="/team">Team</TeamLink>
 
                     {pokemonTeam.map(pokemon => (
                         <PokemonSlot onClick={() => handleClick(pokemon.uuid)} key={pokemon.uuid}>

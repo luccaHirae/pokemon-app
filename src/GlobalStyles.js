@@ -58,6 +58,10 @@ export const Button = styled.button`
         color: ${({ theme }) => theme.colors.onyx};
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 1rem;
+    }
 `
 
 export const AddButton = styled.button`

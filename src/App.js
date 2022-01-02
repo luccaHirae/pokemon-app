@@ -6,19 +6,23 @@ import Footer from './components/Footer';
 import GlobalStyles from './styles/GlobalStyles';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import usePersistedState from './hooks/usePersistedState';
 import light from './styles/themes/light';
-import { useSelector } from 'react-redux';
 import dark from './styles/themes/dark';
 
 const App = () => {
-  const isDark = useSelector(state => state.theme)
+  const [theme, setTheme] = usePersistedState('pokeDataTheme', light)
+
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light)
+  }
 
   return (
     <Router>
-      <ThemeProvider theme={isDark ? dark : light}>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Sidebar />
-        <Header />
+        <Header theme={theme} toggleTheme={toggleTheme} />
         <Routes>
           {routes.map(route => (
             <Route key={route.name} path={route.path} element={route.element} />

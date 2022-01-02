@@ -25,7 +25,7 @@ const Sidebar = () => {
         <AsideContainer>
             {isOpen ? (
                 <SidebarWrapper>
-                    <SidebarButton onClick={toggleOpen} title="close team builder">
+                    <SidebarButton onClick={toggleOpen} title="close team">
                         <SidebarCloseIcon />
                     </SidebarButton>
 
@@ -38,7 +38,7 @@ const Sidebar = () => {
                     ))}
                 </SidebarWrapper>
             ) : (
-                <SidebarButton onClick={toggleOpen} title="open team builder">
+                <SidebarButton onClick={toggleOpen} title="open team">
                     <SidebarIcon />
                 </SidebarButton>
             )}

@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { empty } from '../../redux/reducers/pokemonReducer';
 import { useNavigate } from "react-router-dom";
-import { AddButton, Button, Container } from "../../GlobalStyles";
+import { AddButton, Button, Container } from "../../styles/GlobalStyles";
 import {
     ClearIcon,
     NoPokemonText,

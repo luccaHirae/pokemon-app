@@ -1,4 +1,4 @@
-import { Button, Container } from "../../GlobalStyles";
+import { Button, Container } from "../../styles/GlobalStyles";
 import { HomeErrorMessage, HomeErrorWrapper } from "./styles";
 
 const HomeError = ({ refetch }) => {

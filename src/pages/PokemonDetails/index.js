@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { firstCharToUpperCase } from "../../functions";
 import { useGetPokemonByNameQuery } from "../../redux/services/pokemon";
-import { AddButton, AddIcon, Button, Container } from '../../GlobalStyles';
+import { AddButton, AddIcon, Button, Container } from '../../styles/GlobalStyles';
 import {
     ChartTitle,
     ChartWrapper,

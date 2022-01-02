@@ -3,8 +3,9 @@ import { routes } from './routes';
 import { ThemeProvider } from 'styled-components';
 
 import Footer from './components/Footer';
-import GlobalStyles from './GlobalStyles';
+import GlobalStyles from './styles/GlobalStyles';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 
 const theme = {
   colors: {
@@ -20,6 +21,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Sidebar />
+        <Header />
         <Routes>
           {routes.map(route => (
             <Route key={route.name} path={route.path} element={route.element} />

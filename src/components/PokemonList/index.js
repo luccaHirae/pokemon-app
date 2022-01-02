@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../../GlobalStyles";
+import { Button } from "../../styles/GlobalStyles";
 import Pokemon from "../Pokemon";
 import { Form, Grid, Input, NoResults } from "./styles";
 

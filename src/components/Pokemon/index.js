@@ -11,7 +11,7 @@ import {
     Name,
     Sprite
 } from "./styles";
-import { AddButton, AddIcon } from "../../GlobalStyles";
+import { AddButton, AddIcon } from "../../styles/GlobalStyles";
 
 const Pokemon = ({ pokemon }) => {
     const dispatch = useDispatch()
@@ -33,7 +33,7 @@ const Pokemon = ({ pokemon }) => {
                 <ImageWrapper>
                     <Sprite src={pokemon.sprite} alt={pokemon.name} />
                 </ImageWrapper>
-                <MoreDetails to={`/pokemon/${pokemon.name}`}>More Details</MoreDetails>
+                <MoreDetails to={`/pokemon/${pokemon.name}`}>More details</MoreDetails>
             </CardContent>
         </Card>
     );

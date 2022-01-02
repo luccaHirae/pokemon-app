@@ -1,4 +1,4 @@
-import { Button, Container } from "../../GlobalStyles";
+import { Button, Container } from "../../styles/GlobalStyles";
 import { NotFoundSubtitle, NotFoundWrapper } from "./styles";
 import { useNavigate } from 'react-router-dom'
 

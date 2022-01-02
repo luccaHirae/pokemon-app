@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGetPokemonByLimitQuery } from "../redux/services/pokemon";
-import { Container } from "../GlobalStyles";
+import { Container } from "../styles/GlobalStyles";
 import { Helmet } from 'react-helmet';
 import PokemonList from '../components/PokemonList';
 import Loading from "../components/Loading";
@@ -36,8 +36,6 @@ const Home = () => {
             <Helmet>
                 <title>Poké Data</title>
             </Helmet>
-
-            <h1>Poké Data</h1>
 
             {isSuccess && <PokemonList pokemonData={pokemonData} />}
 

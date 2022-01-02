@@ -1,4 +1,4 @@
-import { Container } from "../../GlobalStyles";
+import { Container } from "../../styles/GlobalStyles";
 import { LoaderWrapper, LoadingBall } from "./styles";
 
 const Loading = () => {

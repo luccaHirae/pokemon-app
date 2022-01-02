@@ -32,7 +32,7 @@ export const Container = styled.div`
     min-height: 100vh;
     max-width: 75%;
     margin: 0 auto;
-    padding: 4rem;
+    padding: 2rem;
 
     @media screen and (max-width: 425px) {
         display: flex;

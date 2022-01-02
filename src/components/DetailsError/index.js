@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Container } from "../../GlobalStyles";
+import { Button, Container } from "../../styles/GlobalStyles";
 import { DetailsErrorMessage, DetailsErrorWrapper } from "./styles";
 
 const DetailsError = () => {

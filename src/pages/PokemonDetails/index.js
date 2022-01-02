@@ -9,6 +9,7 @@ import {
     HeaderContainer,
     HeaderName,
     Image,
+    Subtitle,
     Type,
     Wrapper
 } from "./styles";
@@ -27,6 +28,7 @@ import DetailsError from "../../components/DetailsError";
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
 import { add } from "../../redux/reducers/pokemonReducer";
+import useMenu from "../../hooks/useMenu";
 
 ChartJS.register(
     RadialLinearScale,
@@ -42,6 +44,7 @@ const PokemonDetails = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { data: pokemon, error, isLoading } = useGetPokemonByNameQuery(params.name)
+    const { openMenu } = useMenu()
 
     if (error) return <DetailsError />
 
@@ -67,6 +70,7 @@ const PokemonDetails = () => {
 
     const handleClick = () => {
         dispatch(add(pokemon))
+        openMenu()
     }
 
     return (
@@ -88,13 +92,13 @@ const PokemonDetails = () => {
             <ContentWrapper>
                 <div>
                     <Wrapper>
-                        <h3>Types</h3>
+                        <Subtitle>Types</Subtitle>
                         {pokemon.types.map(t => (
                             <Type type={t.type.name} key={t.type.name}>{t.type.name}</Type>
                         ))}
                     </Wrapper>
 
-                    <h3>Abilities</h3>
+                    <Subtitle>Abilities</Subtitle>
                     {pokemon.abilities.map(a => (
                         <p key={a.ability.name}>{a.ability.name}</p>
                     ))}

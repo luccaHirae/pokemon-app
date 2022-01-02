@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Card = styled.div`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.surface};
     border-radius: 16px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     padding-left: 1rem;
@@ -12,18 +12,24 @@ export const Card = styled.div`
 
 export const CardHeader = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+     align-items: center;
+    justify-content: space-between; 
 `
 
-export const Id = styled.span`
+export const CardTitleWrapper = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+export const Id = styled.h4`
     color: ${({ theme }) => theme.colors.cinnabar};
     font-size: 1.15em;
     font-weight: bold;
+    margin-right: .25rem;
 `
 
 export const Name = styled.h4`
-    color: ${({ theme }) => theme.colors.onyx};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 1.15em;
 `
 
@@ -39,8 +45,8 @@ export const Sprite = styled.img`
 `
 
 export const MoreDetails = styled(Link)`
-    background-color: ${({ theme }) => theme.colors.onyx};
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
     text-align: center;
     border-radius: 16px;
     text-decoration: none;

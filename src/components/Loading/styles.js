@@ -7,7 +7,7 @@ export const LoaderWrapper = styled.div`
 `;
 
 export const LoadingBall = styled.span`
-    background-color: ${({ theme }) => theme.colors.onyx};
+    background-color: ${({ theme }) => theme.colors.primary};
     border-radius: 50%;
     margin: 5rem 0.5rem;
     animation: bouncingLoader 0.6s infinite alternate;

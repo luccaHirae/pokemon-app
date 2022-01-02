@@ -10,8 +10,8 @@ export const AsideContainer = styled.aside`
 
 export const SidebarButton = styled.button`
     border: none;
-    background-color: ${({ theme }) => theme.colors.onyx};
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 50%;
@@ -58,7 +58,7 @@ export const SidebarWrapper = styled.div`
 export const TeamLink = styled(Link)`
     text-align: center;
     background-color: ${({ theme }) => theme.colors.cinnabar};
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     border-radius: 25px;
     text-decoration: none;
     padding: 0.5rem;
@@ -66,15 +66,15 @@ export const TeamLink = styled(Link)`
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: #fff;
+        background-color: ${({ theme }) => theme.colors.white};
         color: ${({ theme }) => theme.colors.cinnabar};
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
 `;
 
 export const PokemonSlot = styled.button`
-    background-color: #fff;
-    border: 2px solid ${({ theme }) => theme.colors.onyx};
+    background-color: ${({ theme }) => theme.colors.secondary};
+    border: 1px solid ${({ theme }) => theme.colors.text};
     border-radius: 50%;
     height: 4rem;
     width: 4rem;

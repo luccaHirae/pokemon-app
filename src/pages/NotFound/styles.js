@@ -8,6 +8,6 @@ export const NotFoundWrapper = styled.div`
 `;
 
 export const NotFoundSubtitle = styled.h2`
-    color: ${({ theme }) => theme.colors.onyx};
+    color: ${({ theme }) => theme.colors.text};
     margin-bottom: 3rem;
 `

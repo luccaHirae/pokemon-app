@@ -11,7 +11,7 @@ export const ButtonWrapper = styled.div`
 export const ScrollButton = styled.button`
     opacity: ${({ isVisible }) => isVisible ? 1 : 0};
     background-color: ${({ theme }) => theme.colors.cinnabar};
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     border: none;
     border-radius: 50%;
     padding: 1rem;

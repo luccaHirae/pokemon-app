@@ -14,7 +14,7 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-    color: ${({ theme }) => theme.colors.onyx};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 2em;
 `;
 
@@ -35,12 +35,12 @@ export const PokemonWrapper = styled(Link)`
     flex-direction: column;
     text-decoration: none;
     border-radius: 1rem;
-    box-shadow: 0 .25rem 1rem rgb(0 0 0 / .1);
-    color: ${({ theme }) => theme.colors.onyx};
+    box-shadow: 0 .25rem 1rem rgb(0 0 0 / .3);
+    color: ${({ theme }) => theme.colors.text};
     transition: all .3s ease;
 
     &:hover {
-        box-shadow: 0 .25rem 1rem rgb(0 0 0 / .5);
+        box-shadow: 0 .25rem 1rem rgb(0 0 0 / .7);
         transform: scale(1.05);
     }
 `;

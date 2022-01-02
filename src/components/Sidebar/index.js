@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import useToggle from "../../hooks/useToggle";
+import useMenu from "../../hooks/useMenu";
 import { remove } from "../../redux/reducers/pokemonReducer";
 import {
     AsideContainer,
@@ -15,7 +15,7 @@ import {
 const Sidebar = () => {
     const pokemonTeam = useSelector(state => state.pokemon)
     const dispatch = useDispatch()
-    const { value, handleToggle } = useToggle(true)
+    const { isOpen, toggleOpen } = useMenu()
 
     const handleClick = (uuid) => {
         dispatch(remove(uuid))
@@ -23,9 +23,9 @@ const Sidebar = () => {
 
     return (
         <AsideContainer>
-            {value ? (
+            {isOpen ? (
                 <SidebarWrapper>
-                    <SidebarButton onClick={handleToggle} title="close team builder">
+                    <SidebarButton onClick={toggleOpen} title="close team builder">
                         <SidebarCloseIcon />
                     </SidebarButton>
 
@@ -38,7 +38,7 @@ const Sidebar = () => {
                     ))}
                 </SidebarWrapper>
             ) : (
-                <SidebarButton onClick={handleToggle} title="open team builder">
+                <SidebarButton onClick={toggleOpen} title="open team builder">
                     <SidebarIcon />
                 </SidebarButton>
             )}

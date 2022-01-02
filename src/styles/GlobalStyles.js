@@ -7,24 +7,21 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: ${({ theme }) => theme.colors.ivory};
+        background-color: ${({ theme }) => theme.colors.secondary};
         font-family: 'Source Code Pro', monospace;
         font-size: 1.15em;
         margin: 0;
     }
 
     p {
+        color: ${({ theme }) => theme.colors.text};
         opacity: 0.7;
         line-height: 1.5;
     }
 
     h1 {
-        color: ${({ theme }) => theme.colors.onyx};
+        color: ${({ theme }) => theme.colors.text};
         text-align: center;
-
-        @media screen and (max-width: 768px) {
-            font-size: 1.5em;
-        }
     }
 `
 
@@ -43,8 +40,8 @@ export const Container = styled.div`
 `
 
 export const Button = styled.button`
-    background-color: ${({ theme }) => theme.colors.onyx};
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
     font-size: 1.15em;
     font-weight: bold;
     border: none;
@@ -54,9 +51,9 @@ export const Button = styled.button`
 
     &:hover {
         cursor: pointer;
-        background-color: #fff;
-        color: ${({ theme }) => theme.colors.onyx};
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 1rem .5rem rgba(0, 0, 0, 0.5);
+        opacity: .9;
+        transform: translateY(-0.5rem);
     }
 
     @media screen and (max-width: 768px) {
@@ -75,9 +72,9 @@ export const AddButton = styled.button`
 
     &:hover {
         cursor: pointer;
-        color: ${({ theme }) => theme.colors.cinnabar};
-        background-color: #fff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        
     }
 `;
 

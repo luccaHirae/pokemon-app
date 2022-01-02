@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-    background-color: ${({ theme }) => theme.colors.onyx};
+    background-color: ${({ theme }) => theme.colors.primary};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterText = styled.p`
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     padding-right: 0.5rem;
 `;
 
@@ -19,7 +19,7 @@ export const FooterLink = styled.a`
     transition: all 0.3s;
 
     &:hover {
-        color: #fff;
+        color: ${({ theme }) => theme.colors.white};
         text-shadow: 0px 0px 10px ${({ theme }) => theme.colors.cinnabar};
     }
 `;

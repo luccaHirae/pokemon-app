@@ -6,19 +6,16 @@ import Footer from './components/Footer';
 import GlobalStyles from './styles/GlobalStyles';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-
-const theme = {
-  colors: {
-    onyx: '#393E41',
-    cinnabar: '#E94F37',
-    ivory: '#fafafa'
-  }
-}
+import light from './styles/themes/light';
+import { useSelector } from 'react-redux';
+import dark from './styles/themes/dark';
 
 const App = () => {
+  const isDark = useSelector(state => state.theme)
+
   return (
     <Router>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={isDark ? dark : light}>
         <GlobalStyles />
         <Sidebar />
         <Header />

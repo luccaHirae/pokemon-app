@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
 `
 
 export const HeaderName = styled.h2`
-    color: ${({ theme }) => theme.colors.onyx};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 2em;
 `
 
@@ -28,6 +28,10 @@ export const ContentWrapper = styled.div`
 
 export const Wrapper = styled.div`
     margin-bottom: 4rem;
+`
+
+export const Subtitle = styled.h3`
+    color: ${({ theme }) => theme.colors.text};
 `
 
 export const Type = styled.p`
@@ -73,7 +77,7 @@ export const Type = styled.p`
                 return '#2c8579'
         }
     }};
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     text-align: center;
     border-radius: 4px;
 `
@@ -100,4 +104,5 @@ export const ChartWrapper = styled.div`
 export const ChartTitle = styled.h2`
     margin-top: 4rem;
     text-align: center;
+    color: ${({ theme }) => theme.colors.text};
 `

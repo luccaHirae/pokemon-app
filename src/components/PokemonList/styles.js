@@ -12,20 +12,23 @@ export const Form = styled.form`
 `
 
 export const Input = styled.input`
-    min-height: 2rem;
+    color: ${({ theme }) => theme.colors.text};
     font-size: 1em;
     width: 100%;
-    min-width: 12rem;
+    max-height: 3.5rem;
+    min-width: 12rem; 
     padding: 1rem 1.5rem;
     margin-right: 1rem;
     border-radius: 25px;
     border: none;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    background-color: ${({ theme }) => theme.colors.surface};
     transition: all 0.3s ease;
 
     &:focus {
-        color: #fff;
-        background-color: ${({ theme }) => theme.colors.onyx};
+        transform: scale(1.02);
+        background-color: ${({ theme }) => theme.colors.secondary};
+        border: 2px solid ${({ theme }) => theme.colors.cinnabar};
         outline: none;
         box-shadow: none;
     }

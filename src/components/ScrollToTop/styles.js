@@ -19,11 +19,15 @@ export const ScrollButton = styled.button`
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.05);
+        transform: scale(1.1);
         filter: brightness(75%);
     }
 
-    @media screen and (max-width: 425px) {
+    &:active {
+        transform: skewY(45deg);
+    }
+
+    @media screen and (max-width: 768px) {
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     }
 `;

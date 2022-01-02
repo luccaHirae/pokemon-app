@@ -56,7 +56,7 @@ export const MoreDetails = styled(Link)`
 
     &:hover {
         opacity: 0.9;
-        transform: scale(1.05);
+        transform: translateY(-.25rem) scale(1.05);
     }
 `
 

@@ -14,9 +14,9 @@ export const Form = styled.form`
 export const Input = styled.input`
     color: ${({ theme }) => theme.colors.text};
     font-size: 1em;
-    width: 100%;
-    max-height: 3.5rem;
-    min-width: 12rem; 
+    width: 66%;
+    max-height: 3rem;
+    min-width: 10rem; 
     padding: 1rem 1.5rem;
     margin-right: 1rem;
     border-radius: 25px;
@@ -26,7 +26,7 @@ export const Input = styled.input`
     transition: all 0.3s ease;
 
     &:focus {
-        transform: scale(1.02);
+        transform: scale(1.03);
         background-color: ${({ theme }) => theme.colors.secondary};
         border: 2px solid ${({ theme }) => theme.colors.cinnabar};
         outline: none;
@@ -34,12 +34,15 @@ export const Input = styled.input`
     }
 
     @media screen and (max-width: 768px) {
+        min-width: 100%;
         margin-bottom: 2rem;
         margin-right: 0;
     }
 `
 
 export const Grid = styled.div`
+    /* background-color: pink; */
+    padding: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;

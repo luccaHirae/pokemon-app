@@ -26,6 +26,7 @@ export const SidebarButton = styled.button`
     @media screen and (max-width: 425px) {
         height: 3rem;
         width: 3rem;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     }
 `;
 
@@ -62,7 +63,7 @@ export const TeamLink = styled(Link)`
     border-radius: 25px;
     text-decoration: none;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     transition: all 0.3s ease;
 
     &:hover {
@@ -78,7 +79,7 @@ export const PokemonSlot = styled.button`
     border-radius: 50%;
     height: 4rem;
     width: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     transition: all 0.3s ease-out;
 
     &:hover {

@@ -47,13 +47,18 @@ export const Button = styled.button`
     border: none;
     border-radius: 25px;
     padding: 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 
     &:hover {
         cursor: pointer;
         box-shadow: 0 1rem .5rem rgba(0, 0, 0, 0.5);
         opacity: .9;
-        transform: translateY(-0.5rem);
+        transform: translateY(-0.25rem);
+    }
+
+    &:active {
+        transform: translateY(.1rem);
+        box-shadow: none;
     }
 
     @media screen and (max-width: 768px) {
@@ -68,13 +73,17 @@ export const AddButton = styled.button`
     border: none;
     border-radius: 50%;
     padding: 0.5rem;
-    transition: all 0.3s;
+    transition: all 0.2s;
 
     &:hover {
         cursor: pointer;
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
         transform: scale(1.1);
         
+    }
+
+    &:active {
+        transform: scale(.9);
     }
 `;
 

@@ -61,7 +61,7 @@ You will also need a code editor like:
 
 ```bash
 # Clone repository
-$ git clone <https://github.com/luccaHirae/pokemon-app>
+$ git clone <https://github.com/luccaHirae/pokemon-app.git>
 
 # Access project directory on cmd
 $ cd pokemon-app

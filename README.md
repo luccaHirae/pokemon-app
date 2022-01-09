@@ -95,6 +95,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## License
 
-This project is under MIT license. See [LICENSE](LICENSE) for more details.
+MIT license. See [LICENSE](LICENSE) for more details.
 
 [⬆ Back to top](#cra-pokémon-application)
